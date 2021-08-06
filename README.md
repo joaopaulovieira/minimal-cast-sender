@@ -1,2 +1,2 @@
 # minimal-cast-sender
-A minimalist Chromecast Sender for Web
+A minimalist Chromecast Sender for the Web
