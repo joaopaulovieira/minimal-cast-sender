@@ -1,0 +1,38 @@
+{
+  "name": "minimal-cast-sender",
+  "version": "1.0.0",
+  "description": "A minimalist Chromecast Sender for the Web.",
+  "keywords": [
+    "chromecast",
+    "sender",
+    "svelte",
+    "video",
+    "cast"
+  ],
+  "homepage": "https://github.com/joaopaulovieira/minimal-cast-sender",
+  "bugs": {
+    "url": "https://github.com/joaopaulovieira/minimal-cast-sender/issues",
+    "email": "vieira.joaopaulo.91@gmail.com"
+  },
+  "license": "MIT",
+  "author": "Joao Paulo Vieira <vieira.joaopaulo.91@gmail.com>",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public --no-clear",
+    "deploy": "npm run build && npx gh-pages -d public/"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "rollup": "^2.56.0",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-svelte": "^7.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "svelte": "^3.42.1"
+  },
+  "dependencies": {
+    "sirv-cli": "^1.0.12"
+  }
+}
