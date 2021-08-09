@@ -42,7 +42,7 @@
   <label for="autoplay_false">False</label>
 </div>
 
-<SetupButton {castAvailabilityStatus} {onClickCallback}/>
+<SetupButton {$castAvailabilityStatus} {onClickCallback}/>
 
 <style>
   h4 {

@@ -6,7 +6,7 @@
 
 <div class="header fl w-100 bg-dark-blue helvetica">
   <span class ="title">Minimal Cast Sender</span>
-  {#if castAvailabilityStatus}
+  {#if $castAvailabilityStatus}
     <CastButton/>
   {:else}
     <span

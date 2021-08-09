@@ -1,19 +1,17 @@
 <script>
+  import { castAvailabilityStatus } from '../stores/cast_status'
+
   // state to control button press animation
   let isPressed = false
-
-  // reactivity for update button state
-  export let castAvailabilityStatus = false
-  $: disableButton = !castAvailabilityStatus
 
   export let onClickCallback = () => {}
 </script>
 
 <button
   class="setup-button bg-dark-blue b--solid br4 bw1 b--white"
-  class:disabled={disableButton}
+  class:disabled={!$castAvailabilityStatus}
   class:pressed={isPressed}
-  disabled={disableButton}
+  disabled={!$castAvailabilityStatus}
   on:mousedown={ () => isPressed = true }
   on:mouseup={ () => isPressed = false }
   on:touchstart={ () => isPressed = true }

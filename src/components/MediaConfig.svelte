@@ -21,7 +21,7 @@ import SetupButton from './SetupButton.svelte'
   <span>Media URL:</span>
   <input on:input={ e => source = e.currentTarget.value }>
 </div>
-<SetupButton {castAvailabilityStatus} {onClickCallback}/>
+<SetupButton {$castAvailabilityStatus} {onClickCallback}/>
 
 <style>
   h4 {
