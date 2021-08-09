@@ -1,8 +1,7 @@
 <script>
+  import { castAvailabilityStatus } from '../stores/cast_status'
   import { fade } from 'svelte/transition'
   import CastButton from './CastButton.svelte'
-
-  export let castAvailabilityStatus = false
 </script>
 
 <div class="header fl w-100 bg-dark-blue helvetica">

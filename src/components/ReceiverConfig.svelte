@@ -1,5 +1,14 @@
 <script>
   import { configStore } from '../stores/cast_config'
+  import { castAvailabilityStatus } from '../stores/cast_status'
+
+  import SetupButton from './SetupButton.svelte'
+
+
+  let receiverApplicationId = $configStore.receiverApplicationId
+  let startWithAutoPlay = true
+
+  let onClickCallback = () => $configStore = { ...$configStore, receiverApplicationId, startWithAutoPlay }
 </script>
 
 <h4>Receiver Config</h4>
@@ -7,8 +16,10 @@
   <span>App ID:</span>
   <input
   type="text"
-  placeholder="Already using App ID 'CC1AD845'"
-  on:input={ e => $configStore = { ...$configStore, receiverApplicationId: e.currentTarget.value } }>
+  placeholder="using 'CC1AD845' if no other App ID is configured"
+  on:input={ e => {
+    receiverApplicationId = e.currentTarget.value.trim() == '' ? 'CC1AD845' : e.currentTarget.value
+  } }>
 </div>
 
 <div class="autoplay-input-container">
@@ -18,7 +29,7 @@
   id="autoplay_true"
   name="autoplay"
   value={true}
-  on:input={ e => $configStore = { ...$configStore, startWithAutoPlay: true } }
+  on:input={ () => startWithAutoPlay = true }
   checked>
   <label for="autoplay_true">True</label>
 
@@ -27,10 +38,11 @@
   id="autoplay_false"
   name="autoplay"
   value={false}
-  on:input={ e => { $configStore = { ...$configStore, startWithAutoPlay: false } } }>
+  on:input={ () => { startWithAutoPlay = false } }>
   <label for="autoplay_false">False</label>
 </div>
 
+<SetupButton {castAvailabilityStatus} {onClickCallback}/>
 
 <style>
   h4 {

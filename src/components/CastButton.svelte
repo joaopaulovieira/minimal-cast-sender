@@ -4,7 +4,6 @@
   
     // Logic to interact with the Cast Sender SDK
   const setupRemotePlayer = () => {
-    console.log($configStore.receiverApplicationId)
     let mediaInfo = new chrome.cast.media.MediaInfo($configStore.source, $configStore.mimeType)
     mediaInfo.streamType = chrome.cast.media.StreamType.BUFFERED
     mediaInfo.metadata = new chrome.cast.media.TvShowMediaMetadata()
@@ -47,6 +46,7 @@
   }
 
   const setupCast = () => {
+    console.log($configStore)
     cast.framework.CastContext.getInstance().setOptions($configStore)
     const remotePlayer = new cast.framework.RemotePlayer()
 

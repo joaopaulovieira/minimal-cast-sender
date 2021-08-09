@@ -1,14 +1,16 @@
-<!-- <script>
+<script>
   // state to control button press animation
   let isPressed = false
 
   // reactivity for update button state
   export let castAvailabilityStatus = false
   $: disableButton = !castAvailabilityStatus
+
+  export let onClickCallback = () => {}
 </script>
 
 <button
-  class="cast-button bg-dark-blue b--solid br4 bw1 b--white"
+  class="setup-button bg-dark-blue b--solid br4 bw1 b--white"
   class:disabled={disableButton}
   class:pressed={isPressed}
   disabled={disableButton}
@@ -16,14 +18,16 @@
   on:mouseup={ () => isPressed = false }
   on:touchstart={ () => isPressed = true }
   on:touchend={ () => isPressed = false }
+  on:click={onClickCallback}
   >
 Setup
 </button>
 
 <style>
-  .cast-button {
+  .setup-button {
+    align-self: flex-end;
     color: white;
-    margin-top: 30px;
+    margin-top: 10px;
     height: 40px;
     width: 80px;
     cursor: pointer;
@@ -39,4 +43,4 @@ Setup
   .pressed {
     transform: matrix(.9, 0, 0, .9, 0, 0);
   }
-</style> -->
+</style>

@@ -1,18 +1,28 @@
 <script>
-  import { configStore } from '../stores/cast_config'
+import { configStore } from '../stores/cast_config'
+import { castAvailabilityStatus } from '../stores/cast_status'
+
+import SetupButton from './SetupButton.svelte'
+
+  let source = ''
+  let mimeType = ''
+
+  let onClickCallback = () => $configStore = { ...$configStore, source, mimeType }
 </script>
 
 <h4>Custom Media</h4>
 <div class="input-container">
   <span>Media URL:</span>
-  <input on:input={ e => $configStore = { ...$configStore, source: e.currentTarget.value } }>
+  <input on:input={ e => source = e.currentTarget.value }>
 </div>
+
 <div class="input-container">
   <span>Mime Type:</span>
   <input
   placeholder="'video/mp4' or 'application/x-mpegurl' and etc."
-  on:input={ e => $configStore = { ...$configStore, mimeType: e.currentTarget.value } }>
+  on:input={ e => mimeType = e.currentTarget.value }>
 </div>
+<SetupButton {castAvailabilityStatus} {onClickCallback}/>
 
 <style>
   h4 {

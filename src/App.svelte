@@ -1,26 +1,22 @@
 <script>
+	import { castAvailabilityStatus } from './stores/cast_status'
+
 	import Header from './components/Header.svelte'
 	import Card from './components/Card.svelte'
-	import MediaList from './components/MediaList.svelte'
-	import CustomMediaConfig from './components/CustomMediaConfig.svelte'
+	import MediaConfig from './components/MediaConfig.svelte'
 	import ReceiverConfig from './components/ReceiverConfig.svelte'
 
-	let castAvailabilityStatus = false
-
 	window['__onGCastApiAvailable'] = isAvailable => {
-		castAvailabilityStatus = isAvailable
+		$castAvailabilityStatus = isAvailable
   }
 </script>
 
-<Header {castAvailabilityStatus}/>
+<Header/>
 <main class="content helvetica">
 	<Card --cardMaxWidth='50%'>
+		<MediaConfig/>
+	</Card>
+	<Card --cardMaxWidth='50%'>
 		<ReceiverConfig/>
-	</Card>
-	<Card --cardMaxWidth='50%'>
-		<MediaList/>
-	</Card>
-	<Card --cardMaxWidth='50%'>
-		<CustomMediaConfig/>
 	</Card>
 </main>
