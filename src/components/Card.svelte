@@ -6,8 +6,9 @@
   .card {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     margin-top: 30px;
-    min-width: 350px;
+    min-width: 360px;
     max-width: var(--cardMaxWidth);
     padding: 5px;
   }

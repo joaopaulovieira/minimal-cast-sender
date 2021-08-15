@@ -13,10 +13,12 @@
 
 <Header/>
 <main class="content helvetica">
-	<Card --cardMaxWidth='50%'>
-		<MediaConfig/>
-	</Card>
-	<Card --cardMaxWidth='50%'>
-		<ReceiverConfig/>
-	</Card>
+	<div class="card-wrapper">
+		<Card --cardMaxWidth='50%'>
+			<MediaConfig/>
+		</Card>
+		<Card --cardMaxWidth='50%'>
+			<ReceiverConfig/>
+		</Card>
+	</div>
 </main>

@@ -45,10 +45,6 @@
 <SetupButton {$castAvailabilityStatus} {onClickCallback}/>
 
 <style>
-  h4 {
-    margin-bottom: 10px;
-  }
-
   span {
     margin-right: 5px;
     white-space: nowrap;
@@ -62,6 +58,7 @@
   .app-id-input-container {
     display: flex;
     align-items: center;
+    margin: 10px 0;
   }
 
   .app-id-input-container span {

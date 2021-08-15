@@ -25,7 +25,6 @@ Setup
   .setup-button {
     align-self: flex-end;
     color: white;
-    margin-top: 10px;
     height: 40px;
     width: 80px;
     cursor: pointer;

@@ -16,25 +16,20 @@ import SetupButton from './SetupButton.svelte'
   }
 </script>
 
-<h4>Custom Media</h4>
+<h4>Media Config</h4>
 <div class="input-container">
-  <span>Media URL:</span>
+  <span>Media:</span>
   <input on:input={ e => source = e.currentTarget.value }>
 </div>
 <SetupButton {$castAvailabilityStatus} {onClickCallback}/>
 
 <style>
-  h4 {
-    margin-bottom: 10px;
-  }
-
   span {
     margin-right: 10px;
     white-space: nowrap;
   }
 
   input {
-    margin-bottom: 5px;
     width: 100%;
   }
 
